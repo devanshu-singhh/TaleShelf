@@ -1,8 +1,8 @@
 import React from 'react'
 import Home from "./home/Home"
 import {Navigate, Route,Routes} from "react-router-dom"
+import Courses from './courses/Courses.jsx'
 import Signup from './components/Signup.jsx'
-import Course from './components/Course.jsx'
 import { Toaster } from 'react-hot-toast';
 import { useAuth } from './context/AuthProvider.jsx'
 
@@ -15,7 +15,7 @@ function App() {
     <div className='dark:bg-slate-800 dark:text-white '>
     <Routes>
     <Route path="/" element={<Home/>}/>
-    <Route path="/Course" element={authUser ? <Course /> : <Navigate to="/signup" />}
+    <Route path="/Course" element={authUser ? <Courses /> : <Navigate to="/signup" />}
     />
     <Route path="/signup" element={<Signup />}/>
    </Routes>
